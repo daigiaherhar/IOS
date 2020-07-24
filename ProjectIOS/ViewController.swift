@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        edtShoeName.delegate = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
