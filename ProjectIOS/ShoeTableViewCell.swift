@@ -23,5 +23,5 @@ class ShoeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var shoeName: UILabel!
     @IBOutlet weak var shoePrice: UILabel!
-    @IBOutlet weak var shoeIImage: UIImageView!
+    @IBOutlet weak var shoeImage: UIImageView!
 }

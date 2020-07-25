@@ -43,7 +43,7 @@ class ShoeTableViewController: UITableViewController {
         let shoe = shoeList[indexPath.row]
         cell.shoeName.text = shoe.name
         cell.shoePrice.text = shoe.price
-        cell.shoeIImage.image = shoe.image
+        cell.shoeImage.image = shoe.image
         return cell
     }
     
@@ -92,8 +92,9 @@ class ShoeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     func loadShoe(){
-    if let shoe = Shoe(name: "Biti's hunter X", amount: "20", priceEntered: "200000", price: "500000", image:UIImage(named: "DefaultImage")){
+    if let shoe = Shoe(name: "Bitis hunter X", amount: "20", priceEntered: "200000", price: "500000", image: UIImage(named: "DefaultImage")){
         shoeList += [shoe]
         }
     }
