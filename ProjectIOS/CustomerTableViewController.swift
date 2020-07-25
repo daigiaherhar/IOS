@@ -1,26 +1,33 @@
 //
-//  ShoeTableViewController.swift
+//  CustomerTableViewController.swift
 //  ProjectIOS
 //
-//  Created by Van Tan Vu on 7/25/20.
+//  Created by Tran Thang on 7/25/20.
 //  Copyright © 2020 OfTung. All rights reserved.
 //
 
 import UIKit
 
-class ShoeTableViewController: UITableViewController {
-    private var shoeList = [Shoe]()
+class CustomerTableViewController: UITableViewController {
+    
+    private var customerList=[Customer]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadShoe()
+        loadCustomer()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    func loadCustomer(){
+        if let customer = Customer(name: "Ai vay", phone: "123456AA", address: "23 ba trung", email: "hatxi@gmail.com"){
+           customerList += [customer]
+           }
+           if let customer1 = Customer(name: "Ai vay", phone: "123456AA", address: "23 ba trung", email: "hatxi@gmail.com"){
+                     customerList += [customer1]
+                     }
+       }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,20 +37,23 @@ class ShoeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return shoeList.count
+        return customerList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ShoeTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ShoeTableViewCell else {
-            fatalError("Can not read the cell")
-        }
+        let cellIdentifier = "CustommerTableViewCell"
+               guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CustommerTableViewCell else {
+                   fatalError("Can not read the cell")
+               }
+               
+               let customer = customerList[indexPath.row]
+               cell.txtName.text = customer.name
+        cell.txtPhone.text = customer.phone
+               cell.txtAddress.text = customer.address
+        cell.txtEmail.text = customer.email
+            
         
-        let shoe = shoeList[indexPath.row]
-        cell.shoeName.text = shoe.name
-        cell.shoePrice.text = shoe.price
-        cell.shoeImage.image = shoe.image
         return cell
     }
     
@@ -92,13 +102,5 @@ class ShoeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func loadShoe(){
-    if let shoe = Shoe(name: "Bitis hunter X", amount: "20", priceEntered: "200000", price: "500000", image: UIImage(named: "DefaultImage")){
-        shoeList += [shoe]
-        }
-        if let shoe1 = Shoe(name: "Bitis hunter X", amount: "20", priceEntered: "200000", price: "500000", image: UIImage(named: "DefaultImage")){
-               shoeList += [shoe1]
-               }
-    }
+
 }
