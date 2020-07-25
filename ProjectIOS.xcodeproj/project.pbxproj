@@ -14,6 +14,7 @@
 		E6601F2E24C9DA2900DE665E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6601F2C24C9DA2900DE665E /* Main.storyboard */; };
 		E6601F3024C9DA4600DE665E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6601F2F24C9DA4600DE665E /* Assets.xcassets */; };
 		E6601F3324C9DA4600DE665E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6601F3124C9DA4600DE665E /* LaunchScreen.storyboard */; };
+		E6634DA524CC3ABD0054FF1E /* ShoeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6634DA424CC3ABD0054FF1E /* ShoeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E6601F2F24C9DA4600DE665E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6601F3224C9DA4600DE665E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6601F3424C9DA4600DE665E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6634DA424CC3ABD0054FF1E /* ShoeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				E6601F2624C9DA2900DE665E /* AppDelegate.swift */,
 				E6601F2824C9DA2900DE665E /* SceneDelegate.swift */,
 				E6601F2A24C9DA2900DE665E /* ViewController.swift */,
+				E6634DA424CC3ABD0054FF1E /* ShoeTableViewCell.swift */,
 				E6601F2C24C9DA2900DE665E /* Main.storyboard */,
 				E6601F2F24C9DA4600DE665E /* Assets.xcassets */,
 				E6601F3124C9DA4600DE665E /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				975688E224CAAC5B00D9E9FF /* Shoe.swift in Sources */,
 				E6601F2B24C9DA2900DE665E /* ViewController.swift in Sources */,
 				E6601F2724C9DA2900DE665E /* AppDelegate.swift in Sources */,
+				E6634DA524CC3ABD0054FF1E /* ShoeTableViewCell.swift in Sources */,
 				E6601F2924C9DA2900DE665E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
