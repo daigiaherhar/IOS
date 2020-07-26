@@ -9,7 +9,11 @@
 import UIKit
 
 class CustomerTableViewController: UITableViewController {
-    
+    enum NavigationDerection {
+              case addCus
+              case updateCus
+          }
+          var navigationDirection: NavigationDerection = .addCus
     private var customerList=[Customer]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +25,17 @@ class CustomerTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func loadCustomer(){
-        if let customer = Customer(name: "Ai vay", phone: "123456AA", address: "23 ba trung", email: "hatxi@gmail.com"){
+        if let customer = Customer(name: "Ai vay", phone: "123456AA", address: "23 ba trung", email: "hatxi@gmail.com",gender: UIImage(named: "Male")){
            customerList += [customer]
            }
-           if let customer1 = Customer(name: "Ai vay", phone: "123456AA", address: "23 ba trung", email: "hatxi@gmail.com"){
-                     customerList += [customer1]
-                     }
+          if let customer = Customer(name: "Ai bit", phone: "123456AA", address: "23 ba trung", email: "hatxi@gmail.com",gender: UIImage(named: "Female")){
+           customerList += [customer]
+           }
        }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+       
         return 1
     }
 
@@ -52,7 +56,7 @@ class CustomerTableViewController: UITableViewController {
         cell.txtPhone.text = customer.phone
                cell.txtAddress.text = customer.address
         cell.txtEmail.text = customer.email
-            
+        cell.imgGender.image = customer.gender
         
         return cell
     }
@@ -102,5 +106,39 @@ class CustomerTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier ?? ""
+        guard let destinationController = segue.destination as? CustomerViewController else {
+            print("can not get the destination controller")
+            return
+        }
+        switch identifier {
+        case "addCus":
+            print("add a new meal")
+            navigationDirection = .addCus
+            destinationController.navigationDirection = .addCus
+       
+        default:
+            print("You are not name the segue!")
+        }
+    }
+    @IBAction func unWindFromCusTomerViewController(sender:UIStoryboardSegue){
+           switch navigationDirection {
+           case .addCus:
+               if let sourceController = sender.source as? CustomerViewController, let newCus = sourceController.customer{
+                   //Calculate new possition in the table
+                   let newIndexPath = IndexPath(row: customerList.count, section: 0)
+                   //add the new meal into the mealList
+                   customerList.append(newCus)
+                   //Insert the newmeal into the tableview
+                   tableView.insertRows(at: [newIndexPath], with: .automatic)
+               }
+    
+           default:
+               print("unknown the direction!")
+               break
+           }
+           
+           
+       }
 }

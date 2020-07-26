@@ -9,14 +9,25 @@
 import UIKit
 
 class CustomerViewController: UIViewController,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    var gender = Bool(true)
+    
+    enum NavigationDerection {
+           case addCus
+           case updateCus
+       }
+       var navigationDirection: NavigationDerection = .addCus
+       
+       var customer:Customer?
+    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var imgGioiTinh: UIImageView!
+    @IBOutlet weak var btnSave: UIBarButtonItem!
     
-    var gioiTinh = Bool(true)
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +35,30 @@ class CustomerViewController: UIViewController,UITextFieldDelegate, UIImagePicke
     }
     
     @IBAction func SelectGender(_ sender: UITapGestureRecognizer) {
-        print("the picture is tapped")
-        if gioiTinh == true{
-            //imgGioiTinh.image(named)
+        //print("the picture is tapped")
+            if gender == true{
+                imgGioiTinh.image = UIImage(named: "Female")
+                gender = false
+            }else{
+                imgGioiTinh.image = UIImage(named: "Male")
+                               gender = true
         }
         
     }
     
     
-    
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let pressButton = sender as? UIBarButtonItem, pressButton === btnSave else{
+            print("xxxxxxx!")
+            return
+        }
+        let name = txtName.text ?? ""
+        let phone = txtPhone.text ?? ""
+        let address = txtAddress.text ?? ""
+        let email = txtEmail.text ?? ""
+        //preparing for the save button pressed
+        customer = Customer(name: name, phone: phone, address: address, email: email, gender: imgGioiTinh.image)
+    }
     /*
     // MARK: - Navigation
 

@@ -12,9 +12,9 @@ class Customer {
     var phone:String
     var address:String
     var email:String
+    var gender:UIImage?
     
-    
-    init?(name:String, phone:String,address:String,email:String) {
+    init?(name:String, phone:String,address:String,email:String,gender:UIImage?) {
         guard !name.isEmpty else {
             return nil
         }
@@ -32,6 +32,6 @@ class Customer {
         self.phone = phone
         self.address = address
         self.email = email
-        
+        self.gender = gender
     }
 }

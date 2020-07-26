@@ -26,4 +26,5 @@ class CustommerTableViewCell: UITableViewCell {
     @IBOutlet weak var txtEmail: UILabel!
     @IBOutlet weak var txtAddress: UILabel!
     
+    @IBOutlet weak var imgGender: UIImageView!
 }
