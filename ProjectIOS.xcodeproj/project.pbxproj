@@ -13,6 +13,7 @@
 		E632F82024CCB08F001C1270 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632F81F24CCB08E001C1270 /* Customer.swift */; };
 		E632F82224CCB191001C1270 /* CustommerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632F82124CCB191001C1270 /* CustommerTableViewCell.swift */; };
 		E632F82824CCB2ED001C1270 /* CustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632F82724CCB2ED001C1270 /* CustomerTableViewController.swift */; };
+		E6335B9B24CD1CF4004835EE /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6335B9A24CD1CF4004835EE /* CustomerViewController.swift */; };
 		E6601F2724C9DA2900DE665E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2624C9DA2900DE665E /* AppDelegate.swift */; };
 		E6601F2924C9DA2900DE665E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2824C9DA2900DE665E /* SceneDelegate.swift */; };
 		E6601F2B24C9DA2900DE665E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2A24C9DA2900DE665E /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		E632F81F24CCB08E001C1270 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		E632F82124CCB191001C1270 /* CustommerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustommerTableViewCell.swift; sourceTree = "<group>"; };
 		E632F82724CCB2ED001C1270 /* CustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewController.swift; sourceTree = "<group>"; };
+		E6335B9A24CD1CF4004835EE /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		E6601F2324C9DA2900DE665E /* ProjectIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6601F2624C9DA2900DE665E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6601F2824C9DA2900DE665E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6335B9724CD1C29004835EE /* ViewConTroll */ = {
+			isa = PBXGroup;
+			children = (
+				E6601F2A24C9DA2900DE665E /* ViewController.swift */,
+				E6335B9A24CD1CF4004835EE /* CustomerViewController.swift */,
+			);
+			path = ViewConTroll;
+			sourceTree = "<group>";
+		};
+		E6335B9824CD1C4F004835EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E632F81F24CCB08E001C1270 /* Customer.swift */,
+				975688E124CAAC5B00D9E9FF /* Shoe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6335B9924CD1C5F004835EE /* Table_Cell_Controller */ = {
+			isa = PBXGroup;
+			children = (
+				97662E8024CC6D8C0025C925 /* ShoeTableViewController.swift */,
+				97662E7E24CC6AD40025C925 /* ShoeTableViewCell.swift */,
+				E632F82124CCB191001C1270 /* CustommerTableViewCell.swift */,
+				E632F82724CCB2ED001C1270 /* CustomerTableViewController.swift */,
+			);
+			path = Table_Cell_Controller;
+			sourceTree = "<group>";
+		};
 		E6601F1A24C9DA2800DE665E = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +99,15 @@
 		E6601F2524C9DA2900DE665E /* ProjectIOS */ = {
 			isa = PBXGroup;
 			children = (
+				E6335B9724CD1C29004835EE /* ViewConTroll */,
+				E6335B9924CD1C5F004835EE /* Table_Cell_Controller */,
+				E6335B9824CD1C4F004835EE /* Model */,
 				E6601F2624C9DA2900DE665E /* AppDelegate.swift */,
 				E6601F2824C9DA2900DE665E /* SceneDelegate.swift */,
-				E6601F2A24C9DA2900DE665E /* ViewController.swift */,
 				E6601F2C24C9DA2900DE665E /* Main.storyboard */,
 				E6601F2F24C9DA4600DE665E /* Assets.xcassets */,
 				E6601F3124C9DA4600DE665E /* LaunchScreen.storyboard */,
 				E6601F3424C9DA4600DE665E /* Info.plist */,
-				975688E124CAAC5B00D9E9FF /* Shoe.swift */,
-				97662E8024CC6D8C0025C925 /* ShoeTableViewController.swift */,
-				97662E7E24CC6AD40025C925 /* ShoeTableViewCell.swift */,
-				E632F81F24CCB08E001C1270 /* Customer.swift */,
-				E632F82124CCB191001C1270 /* CustommerTableViewCell.swift */,
-				E632F82724CCB2ED001C1270 /* CustomerTableViewController.swift */,
 			);
 			path = ProjectIOS;
 			sourceTree = "<group>";
@@ -158,6 +185,7 @@
 			files = (
 				975688E224CAAC5B00D9E9FF /* Shoe.swift in Sources */,
 				E632F82224CCB191001C1270 /* CustommerTableViewCell.swift in Sources */,
+				E6335B9B24CD1CF4004835EE /* CustomerViewController.swift in Sources */,
 				E632F82024CCB08F001C1270 /* Customer.swift in Sources */,
 				E6601F2B24C9DA2900DE665E /* ViewController.swift in Sources */,
 				E6601F2724C9DA2900DE665E /* AppDelegate.swift in Sources */,
