@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A47B23C24CDC26700DCAAED /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B23B24CDC26700DCAAED /* OrderViewController.swift */; };
+		3A47B23E24CDC2E800DCAAED /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B23D24CDC2E800DCAAED /* Order.swift */; };
+		3A47B24024CDC35700DCAAED /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B23F24CDC35700DCAAED /* OrderTableViewController.swift */; };
+		3A47B24224CDC37000DCAAED /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B24124CDC37000DCAAED /* OrderTableViewCell.swift */; };
 		975688E224CAAC5B00D9E9FF /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975688E124CAAC5B00D9E9FF /* Shoe.swift */; };
 		97662E7F24CC6AD40025C925 /* ShoeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97662E7E24CC6AD40025C925 /* ShoeTableViewCell.swift */; };
 		97662E8124CC6D8C0025C925 /* ShoeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97662E8024CC6D8C0025C925 /* ShoeTableViewController.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A47B23B24CDC26700DCAAED /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		3A47B23D24CDC2E800DCAAED /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		3A47B23F24CDC35700DCAAED /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		3A47B24124CDC37000DCAAED /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		975688E124CAAC5B00D9E9FF /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
 		97662E7E24CC6AD40025C925 /* ShoeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewCell.swift; sourceTree = "<group>"; usesTabs = 0; };
 		97662E8024CC6D8C0025C925 /* ShoeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeTableViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 			children = (
 				E6601F2A24C9DA2900DE665E /* ShoeViewController.swift */,
 				E6335B9A24CD1CF4004835EE /* CustomerViewController.swift */,
+				3A47B23B24CDC26700DCAAED /* OrderViewController.swift */,
 			);
 			path = ViewConTroll;
 			sourceTree = "<group>";
@@ -65,6 +74,7 @@
 			children = (
 				E632F81F24CCB08E001C1270 /* Customer.swift */,
 				975688E124CAAC5B00D9E9FF /* Shoe.swift */,
+				3A47B23D24CDC2E800DCAAED /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -76,6 +86,8 @@
 				97662E7E24CC6AD40025C925 /* ShoeTableViewCell.swift */,
 				E632F82124CCB191001C1270 /* CustommerTableViewCell.swift */,
 				E632F82724CCB2ED001C1270 /* CustomerTableViewController.swift */,
+				3A47B23F24CDC35700DCAAED /* OrderTableViewController.swift */,
+				3A47B24124CDC37000DCAAED /* OrderTableViewCell.swift */,
 			);
 			path = Table_Cell_Controller;
 			sourceTree = "<group>";
@@ -186,12 +198,16 @@
 				975688E224CAAC5B00D9E9FF /* Shoe.swift in Sources */,
 				E632F82224CCB191001C1270 /* CustommerTableViewCell.swift in Sources */,
 				E6335B9B24CD1CF4004835EE /* CustomerViewController.swift in Sources */,
+				3A47B24024CDC35700DCAAED /* OrderTableViewController.swift in Sources */,
 				E632F82024CCB08F001C1270 /* Customer.swift in Sources */,
 				E6601F2B24C9DA2900DE665E /* ShoeViewController.swift in Sources */,
 				E6601F2724C9DA2900DE665E /* AppDelegate.swift in Sources */,
+				3A47B23E24CDC2E800DCAAED /* Order.swift in Sources */,
 				97662E7F24CC6AD40025C925 /* ShoeTableViewCell.swift in Sources */,
 				97662E8124CC6D8C0025C925 /* ShoeTableViewController.swift in Sources */,
+				3A47B24224CDC37000DCAAED /* OrderTableViewCell.swift in Sources */,
 				E6601F2924C9DA2900DE665E /* SceneDelegate.swift in Sources */,
+				3A47B23C24CDC26700DCAAED /* OrderViewController.swift in Sources */,
 				E632F82824CCB2ED001C1270 /* CustomerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

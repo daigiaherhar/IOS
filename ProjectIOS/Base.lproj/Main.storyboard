@@ -511,7 +511,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="2Le-P4-d3H">
-                                <rect key="frame" x="20" y="108" width="374" height="373"/>
+                                <rect key="frame" x="20" y="64" width="374" height="373"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-UA-JuD">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -607,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YF4-B8-tle" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4757.971014492754" y="863.83928571428567"/>
+            <point key="canvasLocation" x="4029" y="1771"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pan-Nw-Xww">
@@ -621,12 +621,94 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mkd-wz-1Gc" kind="relationship" relationship="rootViewController" id="PtR-lw-DeA"/>
+                        <segue destination="ubo-Mc-WR7" kind="relationship" relationship="rootViewController" id="1dD-f0-SXf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8s-wq-eNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3848" y="864"/>
+        </scene>
+        <!--Order View Controller-->
+        <scene sceneID="8lH-C8-Ugz">
+            <objects>
+                <viewController id="ubo-Mc-WR7" customClass="OrderViewController" customModule="ProjectIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F1P-cE-Ewm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5wM-CX-3wW">
+                                <rect key="frame" x="20" y="108" width="374" height="328"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-aX-ee0">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvg-lD-STp">
+                                        <rect key="frame" x="0.0" y="42" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNB-Fc-jTt">
+                                        <rect key="frame" x="0.0" y="84" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shoe Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VwR-bB-ySj">
+                                        <rect key="frame" x="0.0" y="126" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhb-Pn-5fT">
+                                        <rect key="frame" x="0.0" y="168" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWr-z3-lAz">
+                                        <rect key="frame" x="0.0" y="210" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Money" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-zi-xtu">
+                                        <rect key="frame" x="0.0" y="252" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-S5-dGe">
+                                        <rect key="frame" x="0.0" y="294" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Nbz-ft-89f" firstAttribute="trailing" secondItem="5wM-CX-3wW" secondAttribute="trailing" constant="20" id="8ec-vd-gBi"/>
+                            <constraint firstItem="5wM-CX-3wW" firstAttribute="top" secondItem="Nbz-ft-89f" secondAttribute="top" constant="20" id="Kml-cV-onG"/>
+                            <constraint firstItem="5wM-CX-3wW" firstAttribute="leading" secondItem="Nbz-ft-89f" secondAttribute="leading" constant="20" id="XuR-5C-csl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nbz-ft-89f"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ct9-xh-r8c">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MvT-Nq-X0f"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="b0S-cy-Bby"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="edtAddress" destination="CNB-Fc-jTt" id="2fy-Dj-Au5"/>
+                        <outlet property="edtAmount" destination="IWr-z3-lAz" id="3Ei-3f-ESu"/>
+                        <outlet property="edtCustomerName" destination="pkk-aX-ee0" id="998-Z7-Qrz"/>
+                        <outlet property="edtPhone" destination="kvg-lD-STp" id="zRC-0Q-I5v"/>
+                        <outlet property="edtPrice" destination="yhb-Pn-5fT" id="KMu-HA-Ov4"/>
+                        <outlet property="edtShoeName" destination="VwR-bB-ySj" id="3Dq-qo-BRW"/>
+                        <outlet property="edtStatus" destination="4gJ-S5-dGe" id="mt1-Dk-gMG"/>
+                        <outlet property="edtToltalMoney" destination="6Xm-zi-xtu" id="AGl-6l-ECu"/>
+                        <outlet property="saveButton" destination="b0S-cy-Bby" id="EbD-rm-OEL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kbq-cb-Kne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4761" y="900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5nL-cT-x7p">
