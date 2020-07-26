@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U5y-QU-1GS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U5y-QU-1GS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -77,7 +77,7 @@
         <!--Shoe New-->
         <scene sceneID="9oB-0p-5mv">
             <objects>
-                <viewController title="Shoe New" id="5Mb-jY-UCY" customClass="ViewController" customModule="ProjectIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shoe New" id="5Mb-jY-UCY" customClass="ShoeViewController" customModule="ProjectIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fo8-39-HQT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,22 +88,22 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your Shoe Name!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3a7-Uc-4Vu">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-i5-Kb7">
                                         <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price entered" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yU-hm-Cez">
                                         <rect key="frame" x="0.0" y="84" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-0x-W8N">
                                         <rect key="frame" x="0.0" y="126" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-MQ-Baj">
                                         <rect key="frame" x="0.0" y="168" width="374" height="250"/>
@@ -138,23 +138,36 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VFM-P2-ibF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Shoe" id="BsW-6c-kDN"/>
+                    <navigationItem key="navigationItem" title="New Shoe" id="BsW-6c-kDN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mnf-HG-Fhd">
+                            <connections>
+                                <action selector="cancel:" destination="5Mb-jY-UCY" id="0Jh-Pw-x4I"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="i2O-tv-KtG">
+                            <connections>
+                                <segue destination="kQV-bd-WH8" kind="unwind" unwindAction="unWindFromDetailShoeContronllerWithSender:" id="hDO-wZ-rSi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="edtAmout" destination="E8R-i5-Kb7" id="90V-aQ-gVX"/>
                         <outlet property="edtPrice" destination="Vuw-0x-W8N" id="6Y7-3v-thN"/>
                         <outlet property="edtPriceEntered" destination="4yU-hm-Cez" id="zMP-M0-OgJ"/>
                         <outlet property="edtShoeName" destination="3a7-Uc-4Vu" id="pAZ-Jb-19G"/>
                         <outlet property="imageShoe" destination="wq6-MQ-Baj" id="AtQ-bW-UUB"/>
+                        <outlet property="saveButton" destination="i2O-tv-KtG" id="09H-iQ-1gy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVG-lJ-G7p" sceneMemberID="firstResponder"/>
+                <exit id="kQV-bd-WH8" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="6O7-qO-GU8">
                     <connections>
                         <action selector="tapOnPictureAction:" destination="5Mb-jY-UCY" id="8Ec-6a-VWi"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5639.130434782609" y="-719.19642857142856"/>
+            <point key="canvasLocation" x="6734.7826086956529" y="-719.19642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dx4-zl-WfJ">
@@ -380,6 +393,7 @@
                                     <outlet property="shoeImage" destination="xeK-3e-9nL" id="bCY-YM-qvT"/>
                                     <outlet property="shoeName" destination="5mJ-Uf-ou4" id="iHn-FG-Eam"/>
                                     <outlet property="shoePrice" destination="tVC-11-8er" id="1MQ-X1-suM"/>
+                                    <segue destination="5Mb-jY-UCY" kind="show" identifier="updateShoe" id="Vfb-SY-XN1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -389,7 +403,7 @@
                     <navigationItem key="navigationItem" title="Quan ly ban giay" id="04N-uj-bwi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z8G-US-lgT">
                             <connections>
-                                <segue destination="5Mb-jY-UCY" kind="show" id="IlN-8w-szg"/>
+                                <segue destination="PHZ-cc-G6E" kind="show" id="veq-CQ-dIR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -685,7 +699,29 @@
             </objects>
             <point key="canvasLocation" x="2934.7826086956525" y="81.696428571428569"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k2J-uf-uQR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PHZ-cc-G6E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ePn-Zw-rxk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YoB-Dx-zLj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Mb-jY-UCY" kind="relationship" relationship="rootViewController" id="AP2-32-Cc0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbO-bg-hh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5726" y="-276"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vfb-SY-XN1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="03601cam__12__3c2c71681799498fa15eef422e539643_large" width="160" height="160"/>
         <image name="DefaultImage" width="160" height="160"/>

@@ -16,7 +16,7 @@
 		E6335B9B24CD1CF4004835EE /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6335B9A24CD1CF4004835EE /* CustomerViewController.swift */; };
 		E6601F2724C9DA2900DE665E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2624C9DA2900DE665E /* AppDelegate.swift */; };
 		E6601F2924C9DA2900DE665E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2824C9DA2900DE665E /* SceneDelegate.swift */; };
-		E6601F2B24C9DA2900DE665E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2A24C9DA2900DE665E /* ViewController.swift */; };
+		E6601F2B24C9DA2900DE665E /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6601F2A24C9DA2900DE665E /* ShoeViewController.swift */; };
 		E6601F2E24C9DA2900DE665E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6601F2C24C9DA2900DE665E /* Main.storyboard */; };
 		E6601F3024C9DA4600DE665E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6601F2F24C9DA4600DE665E /* Assets.xcassets */; };
 		E6601F3324C9DA4600DE665E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6601F3124C9DA4600DE665E /* LaunchScreen.storyboard */; };
@@ -33,7 +33,7 @@
 		E6601F2324C9DA2900DE665E /* ProjectIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6601F2624C9DA2900DE665E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6601F2824C9DA2900DE665E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6601F2A24C9DA2900DE665E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6601F2A24C9DA2900DE665E /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 		E6601F2D24C9DA2900DE665E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6601F2F24C9DA4600DE665E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6601F3224C9DA4600DE665E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		E6335B9724CD1C29004835EE /* ViewConTroll */ = {
 			isa = PBXGroup;
 			children = (
-				E6601F2A24C9DA2900DE665E /* ViewController.swift */,
+				E6601F2A24C9DA2900DE665E /* ShoeViewController.swift */,
 				E6335B9A24CD1CF4004835EE /* CustomerViewController.swift */,
 			);
 			path = ViewConTroll;
@@ -187,7 +187,7 @@
 				E632F82224CCB191001C1270 /* CustommerTableViewCell.swift in Sources */,
 				E6335B9B24CD1CF4004835EE /* CustomerViewController.swift in Sources */,
 				E632F82024CCB08F001C1270 /* Customer.swift in Sources */,
-				E6601F2B24C9DA2900DE665E /* ViewController.swift in Sources */,
+				E6601F2B24C9DA2900DE665E /* ShoeViewController.swift in Sources */,
 				E6601F2724C9DA2900DE665E /* AppDelegate.swift in Sources */,
 				97662E7F24CC6AD40025C925 /* ShoeTableViewCell.swift in Sources */,
 				97662E8124CC6D8C0025C925 /* ShoeTableViewController.swift in Sources */,
