@@ -9,7 +9,7 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-
+    private var orderList = [Order]()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +20,10 @@ class OrderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBOutlet weak var customerName: UILabel!
+    @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var totalMoney: UILabel!
+    @IBOutlet weak var shoeIamge: UIImageView!
 }

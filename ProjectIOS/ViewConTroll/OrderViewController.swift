@@ -8,13 +8,13 @@
 
 import UIKit
 
-class OrderViewController: UIViewController, UITextFieldDelegate {
+class OrderViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+    
     enum NavigationDerection {
-        case addOrder
+        case addNewOrder
         case updateOrder
     }
-    var navigationDirection: NavigationDerection = .addOrder
-    
+    var navigationDerection: NavigationDerection = .addNewOrder
     var order:Order?
     @IBOutlet weak var edtCustomerName: UITextField!
     @IBOutlet weak var edtPhone: UITextField!
@@ -45,6 +45,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
                 edtCustomerName.text = theOrder.customerName
                 edtPhone.text = theOrder.phone
                 edtAddress.text = theOrder.address
+                edtShoeName.text = theOrder.shoeName
                 edtPrice.text = String(theOrder.price)
                 edtAmount.text = String(theOrder.amount)
                 edtToltalMoney.text = String(theOrder.totalMoney)
@@ -83,7 +84,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
             let phone = edtPhone.text ?? ""
             let address = edtAddress.text ?? ""
             let shoeName = edtShoeName.text ?? ""
-            let price = edtPrice.text.toInt()
+            let price = edtPrice.text ?? ""
             let amount = edtAmount.text ?? ""
             let totalMoney = edtToltalMoney.text ?? ""
             let status = edtStatus.text ?? ""
@@ -91,7 +92,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         }
         //MARK: Update save button
         func updateSaveButton() {
-            let mealName = edtShoeName.text ?? ""
+            let customerName = edtCustomerName.text ?? ""
             saveButton.isEnabled = !customerName.isEmpty
         }
         

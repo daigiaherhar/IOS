@@ -13,12 +13,13 @@ class Order {
     var phone:String
     var address:String
     var shoeName:String
-    var price:Int
-    var amount:Int
-    var totalMoney:Int
+    var price:String
+    var amount:String
+    var totalMoney:String
     var status:String
+//    var imageShoe:UIImage
 
-    init?(customerName:String, phone:String, address:String, shoeName:String, price:Int, amount:Int, totalMoney:Int, status: String) {
+    init?(customerName:String, phone:String, address:String, shoeName:String, price:String, amount:String, totalMoney:String, status: String) {
         guard !customerName.isEmpty else {
             return nil
         }
@@ -26,6 +27,15 @@ class Order {
             return nil
         }
         guard !address.isEmpty else {
+            return nil
+        }
+        guard !price.isEmpty else {
+            return nil
+        }
+        guard !amount.isEmpty else {
+            return nil
+        }
+        guard !totalMoney.isEmpty else {
             return nil
         }
         guard !shoeName.isEmpty else {
@@ -43,5 +53,6 @@ class Order {
         self.amount = amount
         self.totalMoney = totalMoney
         self.status = status
+//        self.imageShoe = imageShoe
     }
 }
