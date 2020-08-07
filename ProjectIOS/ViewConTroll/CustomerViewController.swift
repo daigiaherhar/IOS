@@ -30,9 +30,23 @@ class CustomerViewController: UIViewController,UITextFieldDelegate, UIImagePicke
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        txtName.delegate = self
+        txtPhone.delegate = self
+        txtAddress.delegate = self
+        txtEmail.delegate = self
+        if let theCustomer = customer{
+            navigationItem.title = theCustomer.name
+            txtName.text = theCustomer.name
+            txtPhone.text = theCustomer.phone
+            txtAddress.text = theCustomer.address
+            txtEmail.text = theCustomer.email
+            imgGioiTinh.image = theCustomer.gender
+        }
+         
     }
+    
     
     @IBAction func SelectGender(_ sender: UITapGestureRecognizer) {
         //print("the picture is tapped")
@@ -69,4 +83,19 @@ class CustomerViewController: UIViewController,UITextFieldDelegate, UIImagePicke
     }
     */
 
+    @IBAction func Cancel(_ sender: UIBarButtonItem) {
+        switch navigationDirection {
+                  case .addCus:
+                      dismiss(animated: true, completion: nil)
+                  case .updateCus:
+                      if let theNavigationController = navigationController {
+                          theNavigationController.popViewController(animated: true)
+                      }
+                  }
+    }
+//    func updateSaveButton() {
+//        let cusName = txtName.text ?? ""
+//
+//          btnSave.isEnabled = !cusName.isEmpty
+//      }
 }
