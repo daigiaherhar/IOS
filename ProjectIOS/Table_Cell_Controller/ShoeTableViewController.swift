@@ -15,6 +15,9 @@ class ShoeTableViewController: UITableViewController {
         case addNewShoe
         case updateShoe
     }
+    let dao = MyDatabaseShoe();
+    static var isCreate: Bool = false
+    
     var navigationDerection: NavigationDerection = .addNewShoe
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +71,9 @@ class ShoeTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if dao.open(){
+                dao.deleteShoe(shoe: shoeList[indexPath.row])
+            }
             // Delete the row from the data source
             shoeList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -131,12 +137,18 @@ class ShoeTableViewController: UITableViewController {
     
     
     func loadShoe(){
-    if let shoe = Shoe(name: "Bitis hunter X", amount: "20", priceEntered: "200000", price: "500000", image: UIImage(named: "DefaultImage")){
-        shoeList += [shoe]
+        if dao.open(){
+            if !ShoeTableViewController.isCreate{
+                ShoeTableViewController.isCreate = dao.createShoe()
+            }
+            dao.readShoe(shoe: &shoeList)
         }
-        if let shoe1 = Shoe(name: "Bitis hunter X", amount: "20", priceEntered: "200000", price: "500000", image: UIImage(named: "DefaultImage")){
-               shoeList += [shoe1]
-               }
+        if shoeList.count == 0{
+            if let shoe = Shoe(name: "Bitis hunter X", amount: "20", priceEntered: "200000", price: "500000", image: UIImage(named: "DefaultImage")){
+                shoeList += [shoe]
+                dao.insertShoe(shoe: shoe)
+            }
+        }
     }
     @IBAction func unWindFromDetailShoeContronller(sender:UIStoryboardSegue)
     {
@@ -150,10 +162,17 @@ class ShoeTableViewController: UITableViewController {
                 shoeList.append(newShoe)
                 //Insert the newmeal into the tableview
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
+                
+                if dao.open(){
+                    dao.insertShoe(shoe: newShoe)
+                }
             }
         case .updateShoe:
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 if let sourceController = sender.source as? ShoeViewController, let updateShoe = sourceController.shoe {
+                    if dao.open(){
+                        dao.updateShoe(oldShoe: shoeList[selectedIndexPath.row], newShoe: updateShoe)
+                    }
                     //Update to the Meal list
                     shoeList[selectedIndexPath.row] = updateShoe
                     //Update to table view
