@@ -158,7 +158,7 @@ class MyDatabaseAccess {
             let newStringImage = newImageData.base64EncodedData(options: .lineLength64Characters)
             
             do{
-                try db!.executeQuery(sql, values: [newCus.name, newCus.phone, newCus.address, newCus.email, newStringImage, oldCus.name,oldCus.phone])
+                try db!.executeUpdate(sql, values: [newCus.name, newCus.phone, newCus.address, newCus.email, newStringImage, oldCus.name,oldCus.phone])
                 os_log("Successful to update the cus!")
             }
             catch{

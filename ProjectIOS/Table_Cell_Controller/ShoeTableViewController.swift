@@ -168,8 +168,8 @@ class ShoeTableViewController: UITableViewController {
                 }
             }
         case .updateShoe:
+            if let sourceController = sender.source as? ShoeViewController, let updateShoe = sourceController.shoe {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                if let sourceController = sender.source as? ShoeViewController, let updateShoe = sourceController.shoe {
                     if dao.open(){
                         dao.updateShoe(oldShoe: shoeList[selectedIndexPath.row], newShoe: updateShoe)
                     }

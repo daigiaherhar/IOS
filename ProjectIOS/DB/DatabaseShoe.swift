@@ -151,15 +151,12 @@ class MyDatabaseShoe {
     func updateShoe(oldShoe: Shoe, newShoe: Shoe) {
         if db != nil{
             //            let sql = "UPDATE \(TABLE_CUS) SET \(CUS_NAME) = ?, \(CUS_PHONE) = ? \(CUS_ADDRESS) = ? \(CUS_EMAIL) = ? \(CUS_GENDER) = ? WHERE \(CUS_NAME) = ? AND \(CUS_PHONE) = ?"
-            let sql = "UPDATE " + (TABLE_SHOE)
-                + " SET "
-                + SHOE_NAME + " = ? " + ", " + SHOE_AMOUNT + " = ? " + ", " + PRICE_ENTERED + " = ? " + ", " + SHOE_PRICE + " = ? " + ", " + SHOE_IMAGE + " = ? "
-                + "WHERE \(SHOE_NAME) = ? AND \(SHOE_PRICE) = ?"
+            let sql = "UPDATE \(TABLE_SHOE) SET \(SHOE_NAME) = ?, \(SHOE_AMOUNT) = ?, \(PRICE_ENTERED) = ?, \(SHOE_PRICE) = ?, \(SHOE_IMAGE) = ? WHERE \(SHOE_NAME) = ? AND \(SHOE_PRICE) = ?"
             let newImageData: NSData = newShoe.image!.pngData()! as NSData
             let newStringImage = newImageData.base64EncodedData(options: .lineLength64Characters)
             
-            do{
-                try db!.executeQuery(sql, values: [newShoe.name, newShoe.amount, newShoe.priceEntered, newShoe.price, newStringImage, oldShoe.name,oldShoe.price])
+            do{	
+                try db!.executeUpdate(sql, values: [newShoe.name, newShoe.amount, newShoe.priceEntered, newShoe.price, newStringImage, oldShoe.name, oldShoe.price])
                 os_log("Successful to update the cus!")
             }
             catch{
