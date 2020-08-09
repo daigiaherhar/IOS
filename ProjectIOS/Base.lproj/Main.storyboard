@@ -489,7 +489,7 @@
                     <navigationItem key="navigationItem" title="List Customer" id="JEb-jz-3bR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6fe-IR-J7Z">
                             <connections>
-                                <segue destination="2oI-Lt-DTH" kind="show" id="OT4-tm-x9O"/>
+                                <segue destination="2oI-Lt-DTH" kind="show" identifier="addOrder" id="OT4-tm-x9O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -606,7 +606,7 @@
             </objects>
             <point key="canvasLocation" x="6939.130434782609" y="1415.625"/>
         </scene>
-        <!--Order View Controller-->
+        <!--New Order-->
         <scene sceneID="8lH-C8-Ugz">
             <objects>
                 <viewController id="ubo-Mc-WR7" customClass="OrderViewController" customModule="ProjectIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -668,10 +668,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nbz-ft-89f"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ct9-xh-r8c">
+                    <navigationItem key="navigationItem" title="New Order" id="ct9-xh-r8c">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MvT-Nq-X0f">
                             <connections>
                                 <action selector="Cancel:" destination="AMn-OM-97A" id="o81-yj-KvB"/>
+                                <segue destination="AMn-OM-97A" kind="unwind" unwindAction="unWindFromDetailOrderContronllerWithSender:" id="vg6-fL-aQf"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="b0S-cy-Bby">
@@ -898,9 +899,7 @@
                         </prototypes>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="List Customer" id="sqd-f9-wvh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cUn-C0-CRD"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="List Customer" id="sqd-f9-wvh"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fs5-9x-bHF" sceneMemberID="firstResponder"/>
@@ -953,9 +952,7 @@
                         </prototypes>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Quan ly ban giay" id="guj-I4-lJg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pbc-b0-wXb"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Quan ly ban giay" id="guj-I4-lJg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugM-uw-h1J" sceneMemberID="firstResponder"/>

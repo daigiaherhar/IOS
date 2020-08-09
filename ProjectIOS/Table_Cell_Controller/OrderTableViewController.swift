@@ -10,6 +10,9 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     private var orderList = [Order]()
+    let dao = MyDatabaseOrder()
+    
+    static var isCreate: Bool = false
     //Mark the direction of navigation
        enum NavigationDerection {
            case addNewOrder
@@ -67,6 +70,9 @@ class OrderTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if dao.open(){
+                dao.deleteOrder(order: orderList[indexPath.row])
+            }
             // Delete the row from the data source
             orderList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -128,8 +134,17 @@ class OrderTableViewController: UITableViewController {
     
     
     func loadOrder(){
-    if let order = Order(customerName: "nguyen A", phone: "012234", address: "12/2 abc", shoeName: "giay a", price: "1000000", amount: "2", totalMoney: "200000", status: "Dang giao hang"){
-        orderList += [order]
+        if dao.open(){
+            if !OrderTableViewController.isCreate{
+                OrderTableViewController.isCreate = dao.createOrder()
+            }
+            dao.readOrder(order: &orderList)
+        }
+        if orderList.count == 0{
+            if let order = Order(customerName: "nguyen A", phone: "012234", address: "12/2 abc", shoeName: "giay a", price: "1000000", amount: "2", totalMoney: "200000", status: "Dang giao hang"){
+                orderList += [order]
+                dao.insertOrder(order: order)
+            }
         }
     }
     @IBAction func unWindFromDetailOrderContronller(sender:UIStoryboardSegue)
@@ -144,10 +159,16 @@ class OrderTableViewController: UITableViewController {
                 orderList.append(newOrder)
                 //Insert the newmeal into the tableview
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
+                if dao.open(){
+                    dao.insertOrder(order: newOrder)
+                }
             }
         case .updateOrder:
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 if let sourceController = sender.source as? OrderViewController, let updateOrder = sourceController.order {
+                    if dao.open(){
+                        dao.updateOrder(oldOrder: orderList[selectedIndexPath.row], newOrder: updateOrder)
+                    }
                     //Update to the Meal list
                     orderList[selectedIndexPath.row] = updateOrder
                     //Update to table view
