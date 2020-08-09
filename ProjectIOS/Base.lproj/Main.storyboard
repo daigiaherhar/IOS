@@ -424,7 +424,7 @@
             </objects>
             <point key="canvasLocation" x="1444.9275362318842" y="-372.32142857142856"/>
         </scene>
-        <!--List Customer-->
+        <!--List Order-->
         <scene sceneID="ArX-Bj-tbD">
             <objects>
                 <viewController id="krF-4g-uzH" customClass="OrderTableViewController" customModule="ProjectIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -486,7 +486,7 @@
                         </prototypes>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="List Customer" id="JEb-jz-3bR">
+                    <navigationItem key="navigationItem" title="List Order" id="JEb-jz-3bR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6fe-IR-J7Z">
                             <connections>
                                 <segue destination="2oI-Lt-DTH" kind="show" identifier="addOrder" id="OT4-tm-x9O"/>
